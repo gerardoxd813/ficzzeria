@@ -3,9 +3,9 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\ModeloDetallePedido;
+use App\Models\ModeloPedido;
 
-class ControladorDetallePedido extends ResourceController
+class ControladorPedido extends ResourceController
 {
     /**
      * Return an array of resource objects, themselves in array format
@@ -14,8 +14,8 @@ class ControladorDetallePedido extends ResourceController
      */
     public function index()
     {
-        $modeloDetallePedido = new ModeloDetallePedido();
-        $datos['detalle_pedido'] = $modeloDetallePedido->findall();
+        $modeloPedido = new ModeloPedido();
+        $datos['pedidos'] = $modeloPedido->findall();
         return $this->respond($datos);
     }
 
@@ -26,10 +26,10 @@ class ControladorDetallePedido extends ResourceController
      */
     public function show($id = null)
     {
-        $modeloDetallePedido = new ModeloDetallePedido();
-        $detallePedido = $modeloDetallePedido -> getWhere(['id_detalle_pedido' => $id]) -> getResult();
-        if($detallePedido){
-            return $this -> respond($detallePedido);
+        $modeloPedido = new ModeloPedido();
+        $pedido = $modeloPedido -> getWhere(['id_pedido' => $id]) -> getResult();
+        if($pedido){
+            return $this -> respond($pedido);
         }else{
             return $this -> failNotFound('Recurso no encontrado con el identificador ' . $id);
         }
@@ -52,17 +52,14 @@ class ControladorDetallePedido extends ResourceController
      */
     public function create()
     {
-        $modeloDetallePedido = new ModeloDetallePedido();
+        $modeloPedido = new ModeloPedido();
 
         $datos = [
-            'id_cliente' => $this -> request -> getVar('id_cliente'),
-            'id_pizza' => $this -> request -> getVar('id_pizza'),
-            'id_bebida' => $this -> request -> getVar('id_bebida'),
-            'id_extra' => $this -> request -> getVar('id_extra'),
-            'precio_total' => $this -> request -> getVar('precio_total')
+            'id_detalle_pedido' => $this -> request -> getVar('id_detalle_pedido'),
+            'fecha_pedido' => $this -> request -> getVar('fecha_pedido')
         ];
 
-        $modeloDetallePedido -> insert($datos);
+        $modeloPedido -> insert($datos);
 
         $respuesta = [
             'status' => 201,
@@ -90,19 +87,16 @@ class ControladorDetallePedido extends ResourceController
      */
     public function update($id = null)
     {
-        $modeloDetallePedido = new ModeloDetallePedido();
+        $modeloPedido = new ModeloPedido();
 
         $datosSolicitud = $this -> request -> getJSON();
 
         $datosActualizar = [
-            'id_cliente' => $datosSolicitud -> id_cliente,
-            'id_pizza' => $datosSolicitud -> id_pizza,
-            'id_bebida' => $datosSolicitud -> id_bebida,
-            'id_extra' => $datosSolicitud -> id_extra,
-            'precio_total' => $datosSolicitud -> precio_total
+            'id_detalle_pedido' => $datosSolicitud -> id_detalle_pedido,
+            'fecha_pedido' => $datosSolicitud -> fecha_pedido
         ];
 
-        $modeloDetallePedido -> update($id,$datosActualizar);
+        $modeloPedido -> update($id,$datosActualizar);
 
         $respuesta = [
             'status' => 200,
@@ -120,12 +114,12 @@ class ControladorDetallePedido extends ResourceController
      */
     public function delete($id = null)
     {
-        $modeloDetallePedido = new ModeloDetallePedido();
+        $modeloPedido = new ModeloPedido();
 
-        $detallePedido = $modeloDetallePedido -> find($id);
+        $pedido = $modeloPedido -> find($id);
 
-        if($detallePedido){
-            $modeloDetallePedido -> delete($id);
+        if($pedido){
+            $modeloPedido -> delete($id);
 
             $respuesta = [
                 'status' => 200,

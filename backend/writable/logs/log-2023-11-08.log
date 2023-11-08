@@ -5,3 +5,10 @@ in APPPATH\Controllers\ControladorDetallePedido.php on line 17.
  3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\gerar\\Documents\\GitHub\\ficzzeria\\backend\\public\\index.php')
+CRITICAL - 2023-11-08 08:31:56 --> Class "App\Controllers\ModeloDetallePedido" not found
+in APPPATH\Controllers\ControladorDetallePedido.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ControladorDetallePedido->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ControladorDetallePedido))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\gerar\\Documents\\GitHub\\ficzzeria\\backend\\public\\index.php')
