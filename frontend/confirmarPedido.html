@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmacion de pedido</title>
+</head>
+<body>
 
+
+    <h1> ¿Desea confirmar pedido? </h1>
+    <body>
+        <button onclick= "Confirmar()">Confirmar</button>
+        <button onclick= "Cancelar()">Cancelar</button>
+
+    <script>
+        function Confirmar(){var respuesta = confirm("Estas seguro que deseas confirmar el pedido");
+    if (respuesta){
+        alert("¡Confirmado!");
+    }
+    else {alert("Cancelado");
+    }
+}
+    </script>
+
+</body>
+</html>
