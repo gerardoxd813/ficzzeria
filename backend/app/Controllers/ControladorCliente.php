@@ -136,4 +136,58 @@ class ControladorCliente extends ResourceController
             return $this -> failNotFound('Recurso no encontrado con el identificador ' . $id);
         }
     }
+
+
+    /* ----------------------------------------------------------------------------------- */
+
+    public function __construct(){
+        helper(['form','url','session']);
+        $this->session = \Config\Services::session();
+        $this->modeloCliente = model('modeloCliente');
+    }
+
+    public function indexCRUD(){
+
+        $clientes = $this->modeloCliente->orderBy('id_cliente','desc')->findall();
+        return view('clientes/indexCRUD', compact('clientes'));
+    }
+
+    public function showCRUD($id = null){
+        $cliente = $this->modeloCliente->find($id);
+
+        if($cliente){
+            return view('clientes/showCRUD', compact('cliente'));
+        }else{
+            return redirect()->to(site_url('/clientes'));
+        }
+    }
+
+    public function newCRUD(){
+        return view('clientes/newCRUD');
+    }
+
+    public function createCRUD(){
+
+    }
+
+    public function editCRUD($id = null){
+        $cliente = $this->modeloCliente->find($id);
+
+        if($cliente){
+            return view('clientes/editCRUD'.compact('cliente'));
+        }else{
+            session()->setFlashdata('failed','Usuario no encontrado');
+            return redirect()->to('/clientes');
+        }
+
+        return view('clientes/editCRUD');
+    }
+
+    public function updateCRUD($id = null){
+
+    }
+
+    public function deleteCRUD($id = null){
+
+    }
 }
