@@ -16,6 +16,15 @@ class DetallePedidoSeeder extends Seeder
                 'id_extra' => '',
                 'precio_total' => ''
             ]
+            /*
+            [
+                'id_cliente' => '',
+                'id_pizza' => '',
+                'id_bebida' => '',
+                'id_extra' => '',
+                'precio_total' => ''
+            ]
+            */
             ];
 
             $this->db->table('detalle_pedido')->insertBatch($detallePedido);
