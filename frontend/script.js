@@ -82,7 +82,30 @@ function eliminarElemento(e) {
         actualizarContadorCarrito();
 
     }
+
 }
+
+function Crear(){
+    Swal.fire({
+        title: "¿Deseas confirmar orden?",
+        text: "Una vez confirmado, se agregará a la lista de pedidos",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Confirm"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Orden concluida exitosamente",
+            text: "Ha sido añadida a la lista de pedidos",
+            icon: "success"
+          });
+        }
+      });
+
+}
+
 
 function vaciarCarrito() {
     while(lista.firstChild) {

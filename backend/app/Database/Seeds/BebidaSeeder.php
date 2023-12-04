@@ -13,7 +13,7 @@ class BebidaSeeder extends Seeder
                 'nombre_bebida' => 'Coca Cola', //insertar datos del cliente dentro de las comillas
                 'tamaño_bebida' => '600ML',
                 'precio_bebida' => '16',
-                'link_imagen_bebida' => 'https://firebasestorage.googleapis.com/v0/b/pizzeria-b1d63.appspot.com/o/Bebidas%2Fcocacola600ml.jpg?alt=media&token=e3a3a298-4f7b-4fcb-b314-37745fa07700&_gl=1*faptfo*_ga*NTI3ODc4MzcuMTY5Nzc2MjcyMw..*_ga_CW55HF8NVT*MTY5Nzc2MjcyMi4xLjEuMTY5Nzc2NDU0MS42MC4wLjA.'
+                'link_imagen_bebida' => 'https://firebasestorage.googleapis.com/v0/b/pizzeria-b1d63.appspot.com/o/Bebidas%2Fcocacola_2l.jpg?alt=media&token=664f23ed-5382-42e5-836c-1536bcaba712&_gl=1*18bbloj*_ga*NTI3ODc4MzcuMTY5Nzc2MjcyMw..*_ga_CW55HF8NVT*MTY5Nzc2MjcyMi4xLjEuMTY5Nzc2NDU1NC40Ny4wLjA.'
             ],
             [
                 'nombre_bebida' => 'Coca Cola',
