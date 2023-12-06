@@ -2,7 +2,25 @@ let  loadMoreBtn = document.querySelector('#load-more');
 let currentItem = 8;
 let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
 
+/*
+const API_URL="http://localhost:8080";
+const HTMLResponse= document.querySelector("#lista-1");
 
+
+fetch(${API_URL}/pizzas)
+    .then((response)=>response.json())
+    .then((pizzas)=>{
+        const tpl=pizzas.map(pizzas=>`  
+        <img src="${pizzas.link_imagen_pizza}" alt="">  
+        <div class="product-text">
+          <h3>${pizzas.nombre_pizza}</h3>
+          <p class="precio">${pizzas.precio_pizza}</p>
+          <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar al carrito</a>
+        </div> `);
+        HTMLResponse.innerHTML=<div class="box">${tpl}</div>;
+    });
+    //borr
+*/
 
 loadMoreBtn.onclick = () => {
     let boxes = [...document.querySelectorAll('.box-container .box')];
